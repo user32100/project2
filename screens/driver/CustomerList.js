@@ -10,7 +10,7 @@ import {
 
 import customerData from './CustomerData';
 import {Block} from 'galio-framework';
-import theme from './theme';
+import theme from '../../theme';
 
 const onPress = () => {
   Alert.alert('Tapped to the Customer');
@@ -56,6 +56,7 @@ class CustomerList extends Component {
 }
 
 /* lego user profiles received from https://randomuser.me/photos */
+/* flat list template https://reactnativemaster.com/react-native-flatlist-example/ */
 
 const styles = StyleSheet.create({
   container: {

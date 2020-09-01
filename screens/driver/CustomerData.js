@@ -1,11 +1,11 @@
-import img0 from './images/0.jpg';
-import img3 from './images/3.jpg';
-import img2 from './images/2.jpg';
-import image4 from './images/4.jpg';
-import image5 from './images/5.jpg';
-import image6 from './images/6.jpg';
-import image7 from './images/7.jpg';
-import image8 from './images/8.jpg';
+import img0 from '../../images/0.jpg';
+import img3 from '../../images/3.jpg';
+import img2 from '../../images/2.jpg';
+import image4 from '../../images/4.jpg';
+import image5 from '../../images/5.jpg';
+import image6 from '../../images/6.jpg';
+import image7 from '../../images/7.jpg';
+import image8 from '../../images/8.jpg';
 
 const data = [
   {

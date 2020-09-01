@@ -11,7 +11,7 @@ import {
 
 // galio component
 import {Block, Button, Input, Text, Icon} from 'galio-framework';
-import theme from './theme';
+import theme from '../../theme';
 
 class SignUp extends Component {
   constructor(props) {
@@ -66,7 +66,7 @@ class SignUp extends Component {
                   color={inputBorderColor}
                   round
                   shadowColor="#BBDEFB"
-                  size='large'
+                  size="large"
                   onPress={this.props.handler}>
                   <Block row center>
                     <Block flex middle left />

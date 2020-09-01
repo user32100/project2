@@ -11,7 +11,7 @@ import {
 
 // galio component
 import {Block, Button, Input, Text, Icon} from 'galio-framework';
-import theme from './theme';
+import theme from '../../theme';
 
 class Login extends Component {
   constructor(props) {
@@ -26,6 +26,11 @@ class Login extends Component {
   anotherPress() {
     const { username, password } = this.state;
     Alert.alert(`username: ${username}, password: ${password}`);
+  }
+
+  returnToParent() {
+    let username = this.state.username;
+    this.props.handler(username);
   }
 
   render() {
@@ -75,7 +80,7 @@ class Login extends Component {
                   round
                   shadowColor="#BBDEFB"
                   size='large'
-                  onPress={this.props.handler}>
+                  onPress={this.returnToParent.bind(this)}>
                   <Block row center>
                     <Block flex middle left />
                     <Block flex middle center>
