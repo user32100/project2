@@ -5,6 +5,8 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {StyleSheet, View, Text} from 'react-native'; // Text
 import CustomerList from './CustomerList';
+import OrderHistory from './OrderHistory';
+import Delivery from './Delivery';
 
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -17,15 +19,16 @@ function HomeScreen() {
   );
 }
 
-function SettingsScreen() {
+const DeliveryScreens = () => {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Settings!</Text>
-    </View>
+    <Stack.Navigator headerMode="none" initialRouteName="CustomerList">
+      <Stack.Screen name="CustomerList" component={CustomerList} />
+      <Stack.Screen name="Delivery" component={Delivery} />
+    </Stack.Navigator>
   );
-}
+};
 
-const BottomTabNavigator = () => {
+const Driver = () => {
   return (
     <Tab.Navigator
       activeColor="#f0edf6"
@@ -42,7 +45,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
+        component={OrderHistory}
         options={{
           tabBarLabel: 'Geçmiş',
           tabBarIcon: ({color}) => (
@@ -51,8 +54,8 @@ const BottomTabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Display Options"
-        component={CustomerList}
+        name="DeliveryScreens"
+        component={DeliveryScreens}
         options={{
           tabBarLabel: 'Teslimat',
           tabBarIcon: ({color}) => (
@@ -68,4 +71,4 @@ const BottomTabNavigator = () => {
   );
 };
 
-export default BottomTabNavigator;
+export default Driver;

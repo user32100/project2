@@ -9,66 +9,66 @@ import image8 from '../../images/8.jpg';
 
 const data = [
   {
-    name: 'Miyah Myles',
+    name: 'Ali ŞAHİN',
     email: 'miyah.myles@gmail.com',
-    position: 'Data Entry Clerk',
+    address: 'Ankara',
     photo: img0,
   },
   {
-    name: 'June Cha',
+    name: 'Hakan KAYA',
     email: 'june.cha@gmail.com',
-    position: 'Sales Manager',
+    address: 'İstanbul',
     photo: img2,
   },
   {
-    name: 'Iida Niskanen',
+    name: 'Mustafa YILMAZ',
     email: 'iida.niskanen@gmail.com',
-    position: 'Sales Manager',
+    address: 'Bursa',
     photo: img3,
   },
   {
-    name: 'Renee Sims',
+    name: 'Aslı ÇAKIR',
     email: 'renee.sims@gmail.com',
-    position: 'Medical Assistant',
+    address: 'İzmir',
     photo: image4,
   },
   {
-    name: 'Jonathan Nu\u00f1ez',
+    name: 'Umut YİĞİT',
     email: 'jonathan.nu\u00f1ez@gmail.com',
-    position: 'Clerical',
+    address: 'Samsun',
     photo: image5,
   },
   {
-    name: 'Sasha Ho',
+    name: 'Zeynep ÖZTÜRK',
     email: 'sasha.ho@gmail.com',
-    position: 'Administrative Assistant',
+    address: 'Ankara',
     photo:
       image6,
   },
   {
-    name: 'Abdullah Hadley',
+    name: 'Hamza ÖZGÜN',
     email: 'abdullah.hadley@gmail.com',
-    position: 'Marketing',
+    address: 'İstanbul',
     photo:
       image7,
   },
   {
-    name: 'Thomas Stock',
+    name: 'Ahmet TEKİN',
     email: 'thomas.stock@gmail.com',
-    position: 'Product Designer',
+    address: 'Bursa',
     photo:
       image8,
   },
   {
-    name: 'Veeti Seppanen',
+    name: 'Büşra DEMİR',
     email: 'veeti.seppanen@gmail.com',
-    position: 'Product Designer',
+    address: 'Ankara',
     photo: img0,
   },
   {
-    name: 'Bonnie Riley',
+    name: 'Yusuf UZUNOĞLU',
     email: 'bonnie.riley@gmail.com',
-    position: 'Marketing',
+    address: 'Niğde',
     photo: img2,
   },
 ];

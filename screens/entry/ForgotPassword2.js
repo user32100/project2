@@ -38,9 +38,10 @@ class ForgotPassword2 extends Component {
   }
 
   render() {
-    const minutes = Math.floor(this.state.timer / 60);
-    const seconds = this.state.timer - minutes * 60;
-    const isShow = this.state.timer == 60 ? true : false;
+    const {timer} = this.state;
+    const minutes = Math.floor(timer / 60);
+    const seconds = timer - minutes * 60;
+    const isShow = timer == 60 ? true : false;
 
     return (
       <KeyboardAvoidingView
@@ -52,7 +53,7 @@ class ForgotPassword2 extends Component {
               flex={1}
               middle
               style={
-                minutes <= 1
+                timer <= 60
                   ? {backgroundColor: '#E53935'}
                   : {backgroundColor: '#81C784'}
               }>
@@ -86,6 +87,7 @@ class ForgotPassword2 extends Component {
               <Button
                 color="#82B1FF"
                 round
+                size="large"
                 shadowColor="#BBDEFB"
                 onPress={() => Alert.alert('Not implemented')}>
                 Giriş

@@ -4,7 +4,7 @@ import 'react-native-paper';
 import React, {Component} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import Login from './screens/entry/Login';
-import BottomTabNavigator from './screens/driver/BottomTabNavigator';
+import Driver from './screens/driver/Driver';
 import BottomTabNavigator2 from './screens/customer/BottomTabNavigator2';
 
 class App extends Component {
@@ -37,7 +37,7 @@ class App extends Component {
           isCustomer ? (
             <BottomTabNavigator2 />
           ) : (
-            <BottomTabNavigator />
+            <Driver />
           )
         ) : (
           <Login handler={this.handler} />
