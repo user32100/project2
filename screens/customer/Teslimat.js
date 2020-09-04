@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component,useState} from 'react';
 import {
   StyleSheet,
   FlatList,
@@ -16,7 +16,7 @@ import theme from '../../theme';
 const Tab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
 
-const onPress = () => {
+const NewOnPress = () => 
     Alert.alert(
         '',
         'Teslimatı onaylıyor musunuz?',
@@ -27,12 +27,12 @@ const onPress = () => {
         ],
         { cancelable: false }
       );
-};
+
 
 const Teslimat2 = ({item}) => {
-  state={onPress};
+  
   return (
-    <TouchableWithoutFeedback onPress={()=>(this.state.onPress)}>
+    <TouchableWithoutFeedback onPress={NewOnPress}>
       <Block style={styles.listItem} >
         <Image
           source={item.photo}
@@ -58,6 +58,7 @@ const Teslimat2 = ({item}) => {
   );
 };
 const Teslimat3 = ({item}) => {
+  
   return (
     <TouchableWithoutFeedback >
       <Block style={styles.listItem} >
@@ -86,12 +87,12 @@ const Teslimat3 = ({item}) => {
 };
 
 const Accepted = () =>{
-  state = {data: teslimatData};
+  const[data]=useState(teslimatData);
     return (
       <Block style={{flex: 1}} backgroundColor={"#43D607"}>
         <FlatList
           style={{flex: 1}}
-          data={this.state.data}
+          data={data}
           renderItem={({item}) => <Teslimat3 item={item} />}
           keyExtractor={(item) => item.email}
         />
@@ -100,12 +101,12 @@ const Accepted = () =>{
   
 }
 const Waiting = () =>{
-  state = {data: teslimatData};
+  const[data]=useState(teslimatData);
     return (
       <Block style={{flex: 1} } backgroundColor={"#43D607"}>
         <FlatList
           style={{flex: 1}}
-          data={this.state.data}
+          data={data}
           renderItem={({item}) => <Teslimat2 item={item} />}
           keyExtractor={(item) => item.email}
         />
@@ -116,8 +117,8 @@ const Waiting = () =>{
 const TopTabNavigator = () => {
   return (
     <Tab.Navigator
-      activeColor="#f0edf6"
-      barStyle={{ backgroundColor: '#558B2F' }}>
+    activeColor="#f0edf6"
+    barStyle={{ backgroundColor: '#0D47A1' }}>
       <Tab.Screen
         name="Bekleyen"
         component={Waiting}
