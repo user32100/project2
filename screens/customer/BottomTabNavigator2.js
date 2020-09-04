@@ -4,7 +4,6 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {  View, Text } from 'react-native';
 import Teslimat from './Teslimat';
-import Bakiye from './bakiye';
 import {Block} from 'galio-framework';
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -16,7 +15,6 @@ function SettingsScreen() {
     </View>
   );
 }
-
 
 function New2Screen() {
   return (
