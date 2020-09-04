@@ -10,7 +10,6 @@ import BottomTabNavigator2 from './screens/customer/BottomTabNavigator2';
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.handler = this.handler.bind(this);
   }
 
