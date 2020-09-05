@@ -6,23 +6,25 @@ import {
   Image,
   Alert,
   TouchableWithoutFeedback,
+  StatusBar,
 } from 'react-native';
 
 import customerData from './CustomerData';
 import {Block} from 'galio-framework';
 import theme from '../../theme';
+import Delivery from './Delivery';
 
 const onPress = () => {
   Alert.alert('Tapped to the Customer');
 };
 
-const Customer = ({item}) => {
+const Customer = ({handler, item}) => {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableWithoutFeedback onPress={() => handler(item)}>
       <Block style={styles.listItem}>
         <Image
           source={item.photo}
-          style={{width: 30, height: 30, borderRadius: 30}}
+          style={{width: 30, height: 30, borderRadius: 30, alignSelf: 'center'}}
         />
         <Block
           style={{
@@ -32,7 +34,7 @@ const Customer = ({item}) => {
           <Text style={{fontWeight: 'bold', color: theme.COLORS.BLACK}}>
             {item.name}
           </Text>
-          <Text>{item.position}</Text>
+          <Text>{item.address}</Text>
         </Block>
       </Block>
     </TouchableWithoutFeedback>
@@ -40,14 +42,32 @@ const Customer = ({item}) => {
 };
 
 class CustomerList extends Component {
-  state = {data: customerData};
+  constructor(props) {
+    super(props);
+
+    this.state = {data: customerData, customer: null};
+    this.customerDeliveryHandler = this.customerDeliveryHandler.bind(this);
+  }
+
+  customerDeliveryHandler(customer) {
+    this.setState({
+      customer: customer,
+    });
+    this.props.navigation.navigate('Delivery', {
+      customer: customer,
+    });
+  }
+
   render() {
     return (
-      <Block style={{flex: 1}}>
+      <Block safe style={styles.container}>
+        <StatusBar hidden={false} />
         <FlatList
-          style={{flex: 1}}
+          style={{flex: 1, marginTop: 20}}
           data={this.state.data}
-          renderItem={({item}) => <Customer item={item} />}
+          renderItem={({item}) => (
+            <Customer item={item} handler={this.customerDeliveryHandler} />
+          )}
           keyExtractor={(item) => item.email}
         />
       </Block>
@@ -61,8 +81,7 @@ class CustomerList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7F7F7',
-    marginTop: 60,
+    backgroundColor: '#E3F2FD',
   },
   listItem: {
     margin: 10,
