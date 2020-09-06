@@ -2,36 +2,16 @@ import React, { Component, Children } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {  View, Text } from 'react-native';
 import Teslimat from './Teslimat';
-import {Block} from 'galio-framework';
+import History from './History';
+import Bakiye from './Bakiye';
+import Kurye from './Kurye';
+
 const Tab = createMaterialBottomTabNavigator();
 const Stack = createStackNavigator();
 
 
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
-
-function New2Screen() {
-  return (
-    <Block>
-      <Text>Galatasaray</Text>
-    </Block>
-  );
-}
-function NewScreen() {
-  return (
-    <Block>
-      <Text>Galatasaray</Text>
-    </Block>
-  );
-}
-const BottomTabNavigator2 = () => {
+const Customer = () => {
   return (
     <Tab.Navigator
       activeColor="#f0edf6"
@@ -51,7 +31,7 @@ const BottomTabNavigator2 = () => {
       />
       <Tab.Screen
         name="History"
-        component={SettingsScreen}
+        component={History}
         options={{
           tabBarLabel: 'Geçmiş',
           tabBarIcon: ({ color }) => (
@@ -64,7 +44,7 @@ const BottomTabNavigator2 = () => {
       />
       <Tab.Screen
         name="Bakiye"
-        component={New2Screen}
+        component={Bakiye}
         options={{
           tabBarLabel: 'Bakiye',
           tabBarIcon: ({ color }) => (
@@ -78,7 +58,7 @@ const BottomTabNavigator2 = () => {
       />
       <Tab.Screen
         name="Şoför Bilgileri"
-        component={NewScreen}
+        component={Kurye}
         options={{
           tabBarLabel: 'Kurye',
           tabBarIcon: ({ color }) => (
@@ -93,4 +73,4 @@ const BottomTabNavigator2 = () => {
   );
 };
 
-export default BottomTabNavigator2;
+export default Customer;
