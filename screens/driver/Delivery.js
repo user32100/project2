@@ -57,7 +57,7 @@ class Delivery extends Component {
     const {bread, bagel, pastry, cookie, dessert} = this.state;
     const {customer} = this.props.route.params;
     return (
-      <Block safe flex backgroundColor={'#FFFDE7'}>
+      <Block safe flex backgroundColor={'#FFF'}>
         <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
           <Block flex>
             <Image source={bakery} style={styles.bakeryImageStyle} />
@@ -101,7 +101,7 @@ class Delivery extends Component {
             />
             <Button
               size="large"
-              color={'#EF9A9A'}
+              color={theme.COLORS.ERROR}
               style={styles.buttonStyle}
               onPress={() => Alert.alert('Not implemented')}>
               <Text

@@ -8,19 +8,6 @@ import Driver from './screens/driver/Driver';
 import BottomTabNavigator2 from './screens/customer/BottomTabNavigator2';
 
 class App extends Component {
-  _menu = null;
- 
-  setMenuRef = ref => {
-    this._menu = ref;
-  };
- 
-  hideMenu = () => {
-    this._menu.hide();
-  };
- 
-  showMenu = () => {
-    this._menu.show();
-  };
   constructor(props) {
     super(props);
     this.handler = this.handler.bind(this);
