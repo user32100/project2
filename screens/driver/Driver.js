@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {StyleSheet, View, Text} from 'react-native'; // Text
+import {View, Text} from 'react-native'; // Text
 import CustomerList from './CustomerList';
 import OrderHistory from './OrderHistory';
 import Delivery from './Delivery';
@@ -32,17 +32,8 @@ const Driver = () => {
   return (
     <Tab.Navigator
       activeColor="#f0edf6"
+      initialRouteName="DeliveryScreens"
       barStyle={{backgroundColor: '#0D47A1'}}>
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons name="home" color={color} size={23} />
-          ),
-        }}
-      />
       <Tab.Screen
         name="Settings"
         component={OrderHistory}
@@ -61,6 +52,20 @@ const Driver = () => {
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons
               name="truck-delivery-outline"
+              color={color}
+              size={23}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'İade',
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons
+              name="cash-refund"
               color={color}
               size={23}
             />

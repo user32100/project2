@@ -1,7 +1,7 @@
 const data0 = [
   {
     date: '05.01.2020',
-    time: '20.22',
+    time: '09:22',
     orderNumber: '1522203',
     customerName: 'Ali ŞAHİN',
     customerAddr: 'Ankara',
@@ -15,7 +15,7 @@ const data0 = [
   },
   {
     date: '08.01.2020',
-    time: '20.22',
+    time: '10:15',
     orderNumber: '1522245',
     customerName: 'Hakan KAYA',
     customerAddr: 'İstanbul',
@@ -29,7 +29,7 @@ const data0 = [
   },
   {
     date: '09.02.2020',
-    time: '20.22',
+    time: '15:12',
     orderNumber: '1522211',
     customerName: 'Mustafa YILMAZ',
     customerAddr: 'Bursa',
@@ -43,7 +43,7 @@ const data0 = [
   },
   {
     date: '07.03.2020',
-    time: '20.22',
+    time: '11:32',
     orderNumber: '1522298',
     customerName: 'Aslı ÇAKIR',
     customerAddr: 'İzmir',
@@ -57,7 +57,7 @@ const data0 = [
   },
   {
     date: '04.04.2020',
-    time: '20.22',
+    time: '16:44',
     orderNumber: '1522300',
     customerName: 'Umut YİĞİT',
     customerAddr: 'Samsun',
@@ -71,7 +71,7 @@ const data0 = [
   },
   {
     date: '05.04.2020',
-    time: '20.22',
+    time: '11:05',
     orderNumber: '1522301',
     customerName: 'Zeynep ÖZTÜRK',
     customerAddr: 'Ankara',
@@ -85,7 +85,7 @@ const data0 = [
   },
   {
     date: '09.04.2020',
-    time: '20.22',
+    time: '15:30',
     orderNumber: '1522308',
     customerName: 'Hamza ÖZGÜN',
     customerAddr: 'İstanbul',
@@ -99,7 +99,7 @@ const data0 = [
   },
   {
     date: '12.05.2020',
-    time: '20.22',
+    time: '17:40',
     orderNumber: '1522378',
     customerName: 'Ahmet TEKİN',
     customerAddr: 'Bursa',
@@ -113,7 +113,7 @@ const data0 = [
   },
   {
     date: '16.05.2020',
-    time: '20:22',
+    time: '08:22',
     orderNumber: '1522391',
     customerName: 'Büşra DEMİR',
     customerAddr: 'Ankara',
@@ -127,7 +127,7 @@ const data0 = [
   },
   {
     date: '21.05.2020',
-    time: '20.22',
+    time: '18:10',
     orderNumber: '1522485',
     customerName: 'Yusuf UZUNOĞLU',
     customerAddr: 'Niğde',

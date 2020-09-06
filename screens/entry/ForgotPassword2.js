@@ -106,6 +106,7 @@ class ForgotPassword2 extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: theme.COLORS.WHITE,
   },
 
   sectionContainer: {

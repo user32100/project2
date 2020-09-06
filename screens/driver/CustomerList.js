@@ -4,7 +4,6 @@ import {
   FlatList,
   Text,
   Image,
-  Alert,
   TouchableWithoutFeedback,
   StatusBar,
 } from 'react-native';
@@ -12,11 +11,7 @@ import {
 import customerData from './CustomerData';
 import {Block} from 'galio-framework';
 import theme from '../../theme';
-import Delivery from './Delivery';
 
-const onPress = () => {
-  Alert.alert('Tapped to the Customer');
-};
 
 const Customer = ({handler, item}) => {
   return (

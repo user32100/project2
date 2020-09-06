@@ -5,10 +5,15 @@ import {StyleSheet, Image} from 'react-native';
 import {Slider, Block, Text} from 'galio-framework';
 import theme from '../../theme';
 
-const color = '#0D47A1';
+const color = theme.COLORS.WHITE;
+const greenColor = '#26A69A';
 
 const ImageRender = ({photo, text}) => (
-  <Block flex={1} column style={{borderWidth: 3, borderColor: '#FFE0B2'}}>
+  <Block
+    flex={1}
+    backgroundColor={theme.COLORS.WHITE}
+    column
+    style={{borderColor: greenColor, borderRadius: 8, borderWidth: 2}}>
     <Image source={photo} style={styles.imageStyle} />
     <Text
       style={{
@@ -24,23 +29,24 @@ export const DeliveryCard = ({item, photo, handler, text}) => (
   <Block
     row
     style={styles.cardContainer}
-    backgroundColor={theme.COLORS.WHITE}
-    shadow>
+    backgroundColor={greenColor}
+    shadow
+    shadowColor={greenColor}>
     <ImageRender photo={photo} text={text} />
     {
       // quantity and text part
     }
-    <Block flex={2} column backgroundColor={'#FFE0B2'}>
+    <Block flex={2} column>
       <Block flex style={{paddingHorizontal: 10, marginTop: 20}}>
         <Slider
-          activeColor={color}
+          activeColor={'#1DE9B6'}
           step={5}
           maximumValue={200}
           onValueChange={handler}
           value={item}
           style={{marginTop: 50}}
         />
-        <Block row style={{marginTop: 15}}>
+        <Block row>
           <Block flex={1}>
             <Text
               style={{alignSelf: 'center'}}
@@ -82,7 +88,7 @@ const TextPart2 = ({array}) =>
 export const DataDisplay = ({customer, bakeryArray}) => (
   <Block
     row
-    style={styles.cardContainer}
+    style={styles.dataContainer}
     backgroundColor={theme.COLORS.WHITE}
     shadow>
     <Block
@@ -115,10 +121,16 @@ export const DataDisplay = ({customer, bakeryArray}) => (
 );
 
 const styles = StyleSheet.create({
-  cardContainer: {marginTop: 10, margin: 15, height: 140, borderRadius: 5},
+  cardContainer: {
+    marginTop: 10,
+    margin: 15,
+    height: 110,
+    borderRadius: 8,
+  },
+  dataContainer: {marginTop: 10, margin: 15, height: 140, borderRadius: 8},
   imageStyle: {
-    width: 70,
-    height: 70,
+    width: 50,
+    height: 50,
     borderRadius: 30,
     marginTop: 20,
     marginLeft: 10,
@@ -141,8 +153,9 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   borderStyle: {
-    borderColor: '#FFE0B2',
+    borderColor: greenColor,
     borderWidth: 2,
+    borderRadius: 8,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'stretch',
