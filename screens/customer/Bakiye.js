@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ImageBackground, StyleSheet } from 'react-native'
-import bgImage from '../../images/bugday.jpg'
+import bgImage from '../../images/bugday6.jpg'
 import { Text, Block } from 'galio-framework'
 import bakiyedata from './BakiyeData'
 import theme from '../../theme';
