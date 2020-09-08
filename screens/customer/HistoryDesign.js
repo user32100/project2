@@ -99,7 +99,7 @@ const CustomerInfo = ({customer}) => (
   <Block style={{borderTopWidth: 1.5, borderColor: theme.COLORS.BLACK}}>
     <Block column style={{alignItems: 'center', justifyContent: 'center'}}>
       <Text style={{alignSelf: 'center', margin: 20, fontWeight: 'bold'}}>
-        MÜŞTERİ BİLGİLERİ
+        KURYE BİLGİLERİ
       </Text>
       <MaterialCommunityIcons name="chef-hat" color={'#000'} size={23} />
     </Block>
