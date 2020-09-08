@@ -5,9 +5,9 @@ import orderData from './HistoryData';
 import {Block} from 'galio-framework';
 import theme from '../../theme';
 import {AccordionPropPrep, Header} from './HistoryDesign';
-import HistoryAccordion from './HistoryAccordion';
+import ReturnAccordion from './ReturnAccordion';
 
-class OrderHistoryList extends Component {
+class ReturnOrder extends Component {
   constructor(props) {
     super(props);
 
@@ -21,7 +21,7 @@ class OrderHistoryList extends Component {
     return (
       <Block flex backgroundColor={theme.COLORS.WHITE}>
         <Header />
-        <HistoryAccordion
+        <ReturnAccordion
           dataArray={data}
           headerStyle={styles.headerStyle}
           style={styles.listItemStyle}
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OrderHistoryList;
+export default ReturnOrder;

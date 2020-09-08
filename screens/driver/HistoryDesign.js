@@ -12,7 +12,6 @@ import imgBagel from '../../images/bagel.jpg';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 // const officersIds = officers.map(officer => officer.id);
-const greenColor = '#26A69A';
 const blueColor = '#E3F2FD';
 
 // object with title and content keys
@@ -89,7 +88,7 @@ export const Title = ({orderInfo}) => (
 
 // info is content from Accordion
 export const Content = ({info}) => (
-  <Block style={{borderBottomWidth: 1.2, borderColor: greenColor}}>
+  <Block style={{borderBottomWidth: 1.5, borderColor: theme.COLORS.BLACK}}>
     <CustomerInfo customer={info.cInfo} />
     <OrderInfo order={info.orderInfo} />
   </Block>
@@ -97,7 +96,7 @@ export const Content = ({info}) => (
 
 // customer is content's cInfo
 const CustomerInfo = ({customer}) => (
-  <Block>
+  <Block style={{borderTopWidth: 1.5, borderColor: theme.COLORS.BLACK}}>
     <Block column style={{alignItems: 'center', justifyContent: 'center'}}>
       <Text style={{alignSelf: 'center', margin: 20, fontWeight: 'bold'}}>
         MÜŞTERİ BİLGİLERİ
@@ -108,13 +107,13 @@ const CustomerInfo = ({customer}) => (
     <Text style={{alignSelf: 'center', marginBottom: 10}}>
       {customer.cAddr}
     </Text>
-    <Block style={{backgroundColor: greenColor, height: 4}} />
+    <Block style={{backgroundColor: theme.COLORS.BLACK, height: 2.4}} />
   </Block>
 );
 
 // order is content's orderInfo
 const OrderInfo = ({order}) => (
-  <Block style={{marginBottom: 15}}>
+  <Block style={{marginBottom: 20}}>
     <Text style={{alignSelf: 'center', margin: 20, fontWeight: 'bold'}}>
       TESLİMAT BİLGİLERİ
     </Text>
