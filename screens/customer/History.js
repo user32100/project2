@@ -45,7 +45,13 @@ function AccordionPropPrep(array) {
       </Block>
     );
     var content =
-      'Müşteri Bilgileri: \n\n' +
+      'Müşteri Bilgileri \n\n' +
+      'Tarih: ' +
+      array[i].date +
+      '\n\n' +
+      'Time: ' +
+      array[i].time +
+      '\n\n' +
       'Ad: ' +
       array[i].driverName +
       '\n\n' +
