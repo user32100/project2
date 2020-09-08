@@ -10,7 +10,7 @@ const blueColor = '#E3F2FD';
 const darkBlueColor = '#0D47A1';
 const tColor = theme.COLORS.TRANSPARENT;
 const number = 12;
-const returnMoney = [550, 445, 700, 360, 80, 100, 1000, 250];
+const returnMoney = [550, 445, 700, 360, 80, 100, 1000, 250, 1250, 895];
 const blackColor = theme.COLORS.BLACK;
 let moneyIndex = -1;
 
