@@ -46,6 +46,9 @@ const Teslimat2 = ({item}) => {
           <Text style={{fontWeight: 'bold', color: theme.COLORS.BLACK}}>
             {item.name}
           </Text>
+          <Text style={{fontWeight: 'bold', color: theme.COLORS.BLACK}}>
+            {item.gün}
+          </Text>
           <Text style={{fontWeight: 'bold', color: "#F90404"}}>
             {item.content}
           </Text>
@@ -74,6 +77,9 @@ const Teslimat3 = ({item}) => {
           <Text style={{fontWeight: 'bold', color: theme.COLORS.BLACK}}>
             {item.name}
           </Text>
+          <Text style={{fontWeight: 'bold', color: theme.COLORS.BLACK}}>
+            {item.gün}
+          </Text>
           <Text style={{fontWeight: 'bold', color: "#F90404"}}>
             {item.content}
           </Text>
@@ -89,7 +95,7 @@ const Teslimat3 = ({item}) => {
 const Accepted = () =>{
   const[data]=useState(teslimatData);
     return (
-      <Block style={{flex: 1}} backgroundColor={"#43D607"}>
+      <Block style={{flex: 1}} backgroundColor={"#A6D6D6"}>
         <FlatList
           style={{flex: 1}}
           data={data}
@@ -103,7 +109,7 @@ const Accepted = () =>{
 const Waiting = () =>{
   const[data]=useState(teslimatData);
     return (
-      <Block style={{flex: 1} } backgroundColor={"#43D607"}>
+      <Block style={{flex: 1} } backgroundColor={"#A6D6D6"}>
         <FlatList
           style={{flex: 1}}
           data={data}
