@@ -1,49 +1,145 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, ScrollView, Image, Alert} from 'react-native';
 
-import orderData from './HistoryData';
-import {Block} from 'galio-framework';
+import {Block, Button, Text} from 'galio-framework';
 import theme from '../../theme';
-import {AccordionPropPrep, Header} from './HistoryDesign';
-import ReturnAccordion from './ReturnAccordion';
+
+import imgCookie2 from '../../images/cookie2.jpg';
+import imgPastry from '../../images/croissant.jpg';
+import imgBread2 from '../../images/bread2.jpg';
+import imgCake from '../../images/cake.jpg';
+import bakery from '../../images/bakery.jpg';
+import imgBagel from '../../images/bagel.jpg';
+
+import {DeliveryCard, DataDisplay} from './DeliveryCard';
 
 class ReturnOrder extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    bread: 50,
+    pastry: 50,
+    cookie: 50,
+    dessert: 50,
+    bagel: 50,
+  };
 
-    this.state = {
-      data: AccordionPropPrep(orderData),
-    };
+  breadChange(value) {
+    this.setState(() => ({
+      bread: parseFloat(value),
+    }));
+  }
+
+  bagelChange(value) {
+    this.setState(() => ({
+      bagel: parseFloat(value),
+    }));
+  }
+
+  cookieChange(value) {
+    this.setState(() => ({
+      cookie: parseFloat(value),
+    }));
+  }
+
+  pastryChange(value) {
+    this.setState(() => ({
+      pastry: parseFloat(value),
+    }));
+  }
+
+  dessertChange(value) {
+    this.setState(() => ({
+      dessert: parseFloat(value),
+    }));
   }
 
   render() {
-    const {data} = this.state;
+    const {bread, bagel, pastry, cookie, dessert} = this.state;
+    const {customer} = this.props.route.params;
     return (
-      <Block flex backgroundColor={theme.COLORS.WHITE}>
-        <Header />
-        <ReturnAccordion
-          dataArray={data}
-          headerStyle={styles.headerStyle}
-          style={styles.listItemStyle}
-        />
+      <Block safe flex backgroundColor={'#FFF'}>
+        <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+          <Block flex>
+            <Image source={bakery} style={styles.bakeryImageStyle} />
+            <Text style={styles.textStyle}>İade İçin Seçiniz </Text>
+            <DeliveryCard
+              item={bread}
+              photo={imgBread2}
+              handler={this.breadChange.bind(this)}
+              text="EKMEK"
+            />
+
+            <DeliveryCard
+              item={pastry}
+              photo={imgPastry}
+              handler={this.pastryChange.bind(this)}
+              text="POĞAÇA"
+            />
+
+            <DeliveryCard
+              item={bagel}
+              photo={imgBagel}
+              handler={this.bagelChange.bind(this)}
+              text="SİMİT"
+            />
+
+            <DeliveryCard
+              item={dessert}
+              photo={imgCake}
+              handler={this.dessertChange.bind(this)}
+              text="TATLI"
+            />
+            <DeliveryCard
+              item={cookie}
+              photo={imgCookie2}
+              handler={this.cookieChange.bind(this)}
+              text="KURABİYE"
+            />
+            <DataDisplay
+              customer={customer}
+              bakeryArray={[bread, pastry, bagel, dessert, cookie]}
+            />
+            <Button
+              size="large"
+              color={theme.COLORS.ERROR}
+              style={styles.buttonStyle}
+              onPress={() => Alert.alert('İade Onaylandı')}>
+              <Text
+                style={{
+                  fontSize: theme.SIZES.FONT * 1.2,
+                  color: theme.COLORS.WHITE,
+                }}>
+                {'ONAYLA'}
+              </Text>
+            </Button>
+          </Block>
+        </ScrollView>
       </Block>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  listItemStyle: {
-    marginBottom: 10,
-    backgroundColor: '#FFF',
-    width: '95%',
-    flex: 1,
+  bakeryImageStyle: {
+    marginTop: 50,
+    width: '100%',
+    height: 100,
     alignSelf: 'center',
-    flexDirection: 'row',
-    borderRadius: 8,
   },
-  headerStyle: {
-    borderBottomWidth: 1.2,
-    borderColor: '#E8EAF6',
+  textStyle: {
+    marginTop: 30,
+    marginBottom: 20,
+    alignSelf: 'center',
+    fontSize: theme.SIZES.FONT,
+  },
+
+  buttonStyle: {
+    marginTop: 10,
+    margin: 15,
+    borderRadius: 5,
+    alignSelf: 'center',
+    fontSize: theme.SIZES.FONT,
+    fontWeight: 'bold',
   },
 });
 

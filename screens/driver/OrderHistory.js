@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, SafeAreaView} from 'react-native';
 
 import orderData from './HistoryData';
 import {Block} from 'galio-framework';
 import theme from '../../theme';
-import {AccordionPropPrep, Header} from './HistoryDesign';
+import {AccordionPropPrep, Header, CustomerInfo} from './HistoryDesign';
 import HistoryAccordion from './HistoryAccordion';
 
 class OrderHistoryList extends Component {
@@ -16,13 +16,25 @@ class OrderHistoryList extends Component {
     };
   }
 
+  findCustomer(customer1) {
+    const customer = this.state.data.find(
+      (custom) => custom.content.cInfo.cName === customer1.name,
+    ).content.cInfo;
+    this.state = {
+      data: AccordionPropPrep(orderData),
+    };
+    return customer;
+  }
+
   render() {
-    const {data} = this.state;
+    const data = this.state;
+    const {customer} = this.props.route.params;
     return (
-      <Block flex backgroundColor={theme.COLORS.WHITE}>
+      <Block flex style={{backgroundColor: theme.COLORS.WHITE}}>
+        <CustomerInfo customer={this.findCustomer(customer)} />
         <Header />
         <HistoryAccordion
-          dataArray={data}
+          dataArray={this.state.data}
           headerStyle={styles.headerStyle}
           style={styles.listItemStyle}
         />
@@ -48,3 +60,4 @@ const styles = StyleSheet.create({
 });
 
 export default OrderHistoryList;
+// <CustomerInfo customer={this.findCustomer(customer)} />

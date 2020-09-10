@@ -89,14 +89,13 @@ export const Title = ({orderInfo}) => (
 // info is content from Accordion
 export const Content = ({info}) => (
   <Block style={{borderBottomWidth: 1.5, borderColor: theme.COLORS.BLACK}}>
-    <CustomerInfo customer={info.cInfo} />
     <OrderInfo order={info.orderInfo} />
   </Block>
 );
 
 // customer is content's cInfo
-const CustomerInfo = ({customer}) => (
-  <Block style={{borderTopWidth: 1.5, borderColor: theme.COLORS.BLACK}}>
+export const CustomerInfo = ({customer}) => (
+  <Block>
     <Block column style={{alignItems: 'center', justifyContent: 'center'}}>
       <Text style={{alignSelf: 'center', margin: 20, fontWeight: 'bold'}}>
         MÜŞTERİ BİLGİLERİ
@@ -107,7 +106,7 @@ const CustomerInfo = ({customer}) => (
     <Text style={{alignSelf: 'center', marginBottom: 10}}>
       {customer.cAddr}
     </Text>
-    <Block style={{backgroundColor: theme.COLORS.BLACK, height: 2.4}} />
+    <Block style={{backgroundColor: theme.COLORS.BLACK, height: 2}} />
   </Block>
 );
 
@@ -164,7 +163,7 @@ const Item = ({photo, itemName, itemQuant}) => {
 
 const styles = StyleSheet.create({
   newStyle: {
-    marginTop: 30,
+    marginTop: 10,
     width: '95%',
     margin: 10,
     borderRadius: 8,

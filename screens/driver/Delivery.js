@@ -103,7 +103,7 @@ class Delivery extends Component {
               size="large"
               color={theme.COLORS.ERROR}
               style={styles.buttonStyle}
-              onPress={() => Alert.alert('Not implemented')}>
+              onPress={() => Alert.alert('Teslimat Onaylandı')}>
               <Text
                 style={{
                   fontSize: theme.SIZES.FONT * 1.2,
